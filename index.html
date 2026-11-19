@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nikola Lukic · apps I'd want on my own phone</title>
-<meta name="description" content="A tiny software studio of one in Ohlsdorf, Austria: Clock Out, a factory you run in minutes a day; Break Glass with Ivo Klad, a roguelite you can pick up in seconds; and Zorya, a link manager that finally makes sense of your bookmarks.">
+<meta name="description" content="A tiny software studio of one in Ohlsdorf, Austria: Revolt of 1804, a strategy game of the First Serbian Uprising; Clock Out, a factory you run in minutes a day; Break Glass with Ivo Klad, a roguelite you can pick up in seconds; and Zorya, a link manager that finally makes sense of your bookmarks.">
 <meta name="theme-color" content="#F6F1E7">
 <meta name="color-scheme" content="light">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nikodrina.github.io/">
 <meta property="og:title" content="Nikola Lukic · apps I'd want on my own phone">
-<meta property="og:description" content="Clock Out, Break Glass with Ivo Klad and Zorya: three iPhone apps, made and supported by one person in Austria.">
+<meta property="og:description" content="Revolt of 1804, Clock Out, Break Glass with Ivo Klad and Zorya: four apps, made and supported by one person in Austria.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23FF5533'/%3E%3Ctext x='32' y='42' font-family='Arial Black,Arial,sans-serif' font-size='26' font-weight='900' fill='%2315120E' text-anchor='middle'%3ENL%3C/text%3E%3C/svg%3E">
 <script>document.documentElement.classList.add('js')</script>
 <style>
@@ -100,11 +100,16 @@ a.btn:hover .arrow { transform: translateX(4px); }
 .sticker img { width: 100%; height: 100%; border-radius: 21%; }
 .sticker:hover { scale: 1.08; z-index: 3; }
 .sticker--1 { --r: -11deg; left: 4%; top: 2%; z-index: 2; }
-.sticker--2 { --r: 9deg; right: 0; top: 26%; animation-delay: -2.2s; }
-.sticker--3 { --r: -3deg; left: 22%; bottom: 0; animation-delay: -4.4s; z-index: 1; }
+.sticker--2 { --r: 9deg; right: 0; top: 14%; animation-delay: -2.2s; }
+.sticker--3 { --r: -3deg; left: 0; bottom: 4%; animation-delay: -4.4s; z-index: 1; }
+.sticker--4 { --r: 7deg; right: 2%; bottom: -4%; animation-delay: -1.1s; z-index: 2; }
 @media (max-width: 860px) {
   .hero__grid { grid-template-columns: 1fr; }
   .stickers { height: clamp(220px, 58vw, 340px); max-width: 520px; width: 100%; }
+  .sticker--1 { left: 0; top: 0; }
+  .sticker--2 { left: 27%; right: auto; top: 38%; }
+  .sticker--3 { left: 54%; top: 2%; bottom: auto; }
+  .sticker--4 { right: 0; top: 42%; bottom: auto; }
 }
 
 /* Crossing tapes, scrolling opposite ways. */
@@ -278,6 +283,26 @@ a.btn:hover .arrow { transform: translateX(4px); }
 @keyframes twinkle { from { opacity: 0.15; } to { opacity: 0.9; } }
 @keyframes glow { from { opacity: 0.55; } to { opacity: 1; } }
 @keyframes wobble { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(10deg); } 75% { transform: rotate(-8deg); } }
+/* Revolt of 1804: the game's vellum, ink, lapis and cinnabar, on a faint hex grid. */
+.app--revolt { background-color: #E9DDC7; color: #2A2018;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cpath d='M28 0 L56 16.2 L56 48.5 L28 64.7 L0 48.5 L0 16.2 Z M28 64.7 L28 97' fill='none' stroke='%232A2018' stroke-opacity='0.07' stroke-width='1.5'/%3E%3C/svg%3E"); }
+.app--revolt .tag--solid { background: #2D4C9A; color: #F3EBDC; border-color: #2D4C9A; }
+.app--revolt .app__sub { color: #B23A24; opacity: 1; }
+.deck { position: relative; height: clamp(360px, 38vw, 520px); }
+.deck img { position: absolute; left: 50%; top: 50%; width: clamp(280px, 34vw, 500px); height: auto; border-radius: 18px; border: 5px solid #2A2018; background: #2A2018;
+  box-shadow: 0 18px 40px rgba(42, 32, 24, 0.28); transition: transform 0.4s cubic-bezier(.2,.8,.2,1); }
+.deck img:nth-child(1) { transform: translate(-50%, -50%) translate(-14%, -46%) rotate(-6deg); }
+.deck img:nth-child(2) { transform: translate(-50%, -50%) translate(10%, 4%) rotate(3deg); z-index: 2; }
+.deck img:nth-child(3) { transform: translate(-50%, -50%) translate(-6%, 52%) rotate(-2deg); z-index: 1; }
+.deck:hover img:nth-child(1) { transform: translate(-50%, -50%) translate(-20%, -58%) rotate(-8deg); }
+.deck:hover img:nth-child(2) { transform: translate(-50%, -50%) translate(14%, 4%) rotate(4deg) scale(1.03); }
+.deck:hover img:nth-child(3) { transform: translate(-50%, -50%) translate(-10%, 64%) rotate(-3deg); }
+@media (max-width: 860px) {
+  .deck { height: auto; display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 10px 4px 22px; margin: 0 calc(-1 * var(--gutter)); padding-left: var(--gutter); padding-right: var(--gutter); scrollbar-width: none; }
+  .deck::-webkit-scrollbar { display: none; }
+  .deck img, .deck img:nth-child(n), .deck:hover img:nth-child(n) { position: static; transform: none; width: min(84vw, 460px); flex: 0 0 auto; scroll-snap-align: center; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -305,16 +330,17 @@ a.btn:hover .arrow { transform: translateX(4px); }
     <div>
       <p class="hero__hi">Hi, I'm Nikola.</p>
       <h1>Apps I'd <span class="outline">actually</span> want on <span class="hl">my own</span> phone.</h1>
-      <p class="hero__lede">A tiny software studio of one in Ohlsdorf, Austria. So far: a factory you run in minutes a day, a roguelite you can pick up in seconds, and a link manager that finally makes sense of your bookmarks.</p>
+      <p class="hero__lede">A tiny software studio of one in Ohlsdorf, Austria. Coming soon: a strategy game of the 1804 Serbian uprising. So far: a factory you run in minutes a day, a roguelite you can pick up in seconds, and a link manager that finally makes sense of your bookmarks.</p>
       <div class="hero__cta">
         <a class="btn btn--ink" href="#apps">See the apps <span class="arrow" aria-hidden="true">↓</span></a>
         <a class="btn" href="#support">Get help</a>
       </div>
     </div>
     <div class="stickers">
-      <a class="sticker sticker--1" href="#clock-out"><img src="assets/img/icon-clock-out.png" alt="Clock Out" width="256" height="256"></a>
-      <a class="sticker sticker--2" href="#zorya"><img src="assets/img/icon-zorya.png" alt="Zorya" width="256" height="256"></a>
+      <a class="sticker sticker--1" href="#revolt-1804"><img src="assets/img/icon-revolt.png" alt="Revolt of 1804" width="256" height="256"></a>
+      <a class="sticker sticker--2" href="#clock-out"><img src="assets/img/icon-clock-out.png" alt="Clock Out" width="256" height="256"></a>
       <a class="sticker sticker--3" href="#break-glass"><img src="assets/img/icon-break-glass.png" alt="Break Glass with Ivo Klad" width="256" height="256"></a>
+      <a class="sticker sticker--4" href="#zorya"><img src="assets/img/icon-zorya.png" alt="Zorya" width="256" height="256"></a>
     </div>
   </div>
 </header>
@@ -325,22 +351,44 @@ a.btn:hover .arrow { transform: translateX(4px); }
     <span>No investors <i class="star">✶</i></span><span>No subscriptions <i class="star">✶</i></span><span>Support answered by me <i class="star">✶</i></span><span>Made in Austria <i class="star">✶</i></span>
   </div></div>
   <div class="tape__band tape__band--ink"><div class="tape__track">
-    <span>Run a factory <i class="star">✶</i></span><span>Smash some glass <i class="star">✶</i></span><span>Map your links <i class="star">✶</i></span><span>One human <i class="star">✶</i></span>
-    <span>Run a factory <i class="star">✶</i></span><span>Smash some glass <i class="star">✶</i></span><span>Map your links <i class="star">✶</i></span><span>One human <i class="star">✶</i></span>
+    <span>Raise a rebellion <i class="star">✶</i></span><span>Run a factory <i class="star">✶</i></span><span>Smash some glass <i class="star">✶</i></span><span>Map your links <i class="star">✶</i></span><span>One human <i class="star">✶</i></span>
+    <span>Raise a rebellion <i class="star">✶</i></span><span>Run a factory <i class="star">✶</i></span><span>Smash some glass <i class="star">✶</i></span><span>Map your links <i class="star">✶</i></span><span>One human <i class="star">✶</i></span>
   </div></div>
 </div>
 
 <main>
   <section class="apps-intro wrap reveal" id="apps" aria-labelledby="apps-title">
-    <h2 id="apps-title">Three apps.<br><span class="outline">One human.</span></h2>
+    <h2 id="apps-title">Four apps.<br><span class="outline">One human.</span></h2>
     <p>Designed, built and supported by me, each in its own little world.</p>
+  </section>
+
+  <!-- Revolt of 1804 -->
+  <section class="app app--revolt app--flip" id="revolt-1804" aria-labelledby="revolt-1804-title">
+    <div class="wrap app__grid">
+      <div class="app__text reveal">
+        <div class="app__top"><span class="app__num">01 / 04</span><span class="tag tag--solid">iPhone &amp; iPad</span><span class="tag">Game</span></div>
+        <div class="app__title">
+          <img class="app__icon" src="assets/img/icon-revolt.png" alt="" width="256" height="256">
+          <div><h3 id="revolt-1804-title">Revolt of 1804</h3><p class="app__sub">Battle under the plum tree</p></div>
+        </div>
+        <p class="app__kicker">Šumadija rises. Will the villages follow?</p>
+        <p class="app__desc">Lead the First Serbian Uprising on a painted map that turns with the seasons. Win the villages over, arm your bands, and outfight the pasha's columns on hex battlefields where every attack shows its odds before you commit. Three campaigns, from the assembly at Orašac to the walls of Belgrade.</p>
+        <ul class="chips"><li>Hex battles</li><li>3 campaigns</li><li>Plays offline</li><li>No ads</li></ul>
+        <div class="app__cta"><span class="btn btn--ink soon">Coming soon to the App Store</span></div>
+      </div>
+      <div class="deck reveal reveal-delay">
+        <img src="assets/img/revolt-3.jpg" alt="Revolt of 1804: the Orašac campaign's opening card, Šumadija rises" width="1200" height="552" loading="lazy">
+        <img src="assets/img/revolt-1.jpg" alt="Revolt of 1804: rebels and Ottomans face each other across a river on the hex battlefield" width="1200" height="552" loading="lazy">
+        <img src="assets/img/revolt-2.jpg" alt="Revolt of 1804: the painted campaign map in winter, with the guided start" width="1200" height="552" loading="lazy">
+      </div>
+    </div>
   </section>
 
   <!-- Clock Out -->
   <section class="app app--clock" id="clock-out" aria-labelledby="clock-out-title">
     <div class="wrap app__grid">
       <div class="app__text reveal">
-        <div class="app__top"><span class="app__num">01 / 03</span><span class="tag tag--new">New</span><span class="tag">Game</span></div>
+        <div class="app__top"><span class="app__num">02 / 04</span><span class="tag tag--new">New</span><span class="tag">Game</span></div>
         <div class="app__title">
           <img class="app__icon" src="assets/img/icon-clock-out.png" alt="" width="256" height="256">
           <div><h3 id="clock-out-title">Clock Out</h3><p class="app__sub">A factory tycoon you plan in minutes</p></div>
@@ -349,7 +397,7 @@ a.btn:hover .arrow { transform: translateX(4px); }
         <p class="app__desc">Take the morning's orders, lay out the shift, start the day, then close the app. Your crew works the floor, the forklift does the heavy lifting, and every evening your accountants deliver the report. Grow from a cutter and a packer into robot cells and production lines, with the Moon somewhere on the horizon.</p>
         <ul class="chips"><li>Isometric pixel art</li><li>206 developments</li><li>Minutes a day</li><li>No ads</li></ul>
         <p class="app__price">The first 31 in-game days free · then one purchase, €1.99</p>
-        <div class="app__cta"><span class="btn btn--ink soon">Coming soon to the App Store</span></div>
+        <div class="app__cta"><a class="btn btn--ink" href="https://apps.apple.com/at/app/clock-out-factory-tycoon/id6826890789">Download on the App Store <span class="arrow" aria-hidden="true">→</span></a></div>
       </div>
       <div class="fan reveal reveal-delay">
         <img src="assets/img/clock-out-1.webp" alt="Clock Out: the factory floor at work" width="560" height="1218" loading="lazy">
@@ -372,7 +420,7 @@ a.btn:hover .arrow { transform: translateX(4px); }
     <span class="potion potion--g" aria-hidden="true"></span><span class="potion potion--y" aria-hidden="true"></span><span class="potion potion--r" aria-hidden="true"></span>
     <div class="wrap app__grid">
       <div class="app__text reveal">
-        <div class="app__top"><span class="app__num">02 / 03</span><span class="tag tag--solid">Free</span><span class="tag">Game</span></div>
+        <div class="app__top"><span class="app__num">03 / 04</span><span class="tag tag--solid">Free</span><span class="tag">Game</span></div>
         <div class="app__title">
           <img class="app__icon" src="assets/img/icon-break-glass.png" alt="" width="256" height="256">
           <div><h3 id="break-glass-title">Break Glass</h3><p class="app__sub">with Ivo Klad</p></div>
@@ -404,7 +452,7 @@ a.btn:hover .arrow { transform: translateX(4px); }
     </svg>
     <div class="wrap app__grid">
       <div class="app__text reveal">
-        <div class="app__top"><span class="app__num">03 / 03</span><span class="tag tag--solid">€1.99</span><span class="tag">Productivity</span></div>
+        <div class="app__top"><span class="app__num">04 / 04</span><span class="tag tag--solid">€1.99</span><span class="tag">Productivity</span></div>
         <div class="app__title">
           <img class="app__icon" src="assets/img/icon-zorya.png" alt="" width="256" height="256">
           <div><h3 id="zorya-title">Zorya</h3><p class="app__sub">Link Manager</p></div>
@@ -434,7 +482,7 @@ a.btn:hover .arrow { transform: translateX(4px); }
         <h2 id="about-title">No team. No investors. <span class="hl">Just me.</span></h2>
         <p class="body">I'm a solo developer in Ohlsdorf, Austria, making software slowly and on purpose. I design, build, and support every app here myself. When you email support, you reach me directly.</p>
         <dl class="stats">
-          <div><dt>3</dt><dd>apps</dd></div>
+          <div><dt>4</dt><dd>apps</dd></div>
           <div><dt>1</dt><dd>human behind them</dd></div>
           <div><dt>0</dt><dd>investors</dd></div>
         </dl>
@@ -455,11 +503,11 @@ a.btn:hover .arrow { transform: translateX(4px); }
         </details>
         <details>
           <summary>Do the apps track me or show ads?</summary>
-          <p>Clock Out and Zorya collect no data and show no ads. Break Glass is free, with optional rewarded ads to revive.</p>
+          <p>Revolt of 1804, Clock Out and Zorya collect no data and show no ads. Break Glass is free, with optional rewarded ads to revive.</p>
         </details>
         <details>
           <summary>Where is my data stored?</summary>
-          <p>Clock Out keeps your factory on your iPhone and sends nothing anywhere. Zorya syncs privately through your own iCloud, with no account and no password, and has full JSON export and import built in.</p>
+          <p>Revolt of 1804 keeps your campaigns on your iPhone or iPad and doesn't connect to the internet at all. Clock Out keeps your factory on your iPhone and sends nothing anywhere. Zorya syncs privately through your own iCloud, with no account and no password, and has full JSON export and import built in.</p>
         </details>
         <details>
           <summary>What does Clock Out cost?</summary>
@@ -467,11 +515,11 @@ a.btn:hover .arrow { transform: translateX(4px); }
         </details>
         <details>
           <summary>What devices are supported?</summary>
-          <p>Clock Out is made for iPhone, with iOS 17 or later. Break Glass and Zorya run on iPhone and iPad, and on Apple-silicon Macs. Each App Store listing shows the minimum system version.</p>
+          <p>Revolt of 1804 is made for iPhone and iPad, in landscape, with iOS 17 or later. Clock Out is made for iPhone, with iOS 17 or later. Break Glass and Zorya run on iPhone and iPad, and on Apple-silicon Macs. Each App Store listing shows the minimum system version.</p>
         </details>
         <details>
           <summary>Where are the privacy policies?</summary>
-          <p>Here: <a href="https://gist.github.com/NikoDrina/d56529ce1ca69260328f16be05bbcb22">Clock Out</a>, <a href="https://gist.github.com/NikoDrina/1137550841e1736f012a484f3e18f34c">Break Glass</a> and <a href="https://gist.github.com/NikoDrina/e68199185fd0bf6ee3df0ecbefcd1f06">Zorya</a>.</p>
+          <p>Here: <a href="https://gist.github.com/NikoDrina/c8e6715a2b4ef701b5458fa8d3f72861">Revolt of 1804</a>, <a href="https://gist.github.com/NikoDrina/d56529ce1ca69260328f16be05bbcb22">Clock Out</a>, <a href="https://gist.github.com/NikoDrina/1137550841e1736f012a484f3e18f34c">Break Glass</a> and <a href="https://gist.github.com/NikoDrina/e68199185fd0bf6ee3df0ecbefcd1f06">Zorya</a>.</p>
         </details>
       </div>
     </div>
@@ -486,6 +534,7 @@ a.btn:hover .arrow { transform: translateX(4px); }
       <div class="foot__links">
         <a href="mailto:zorya.support@gmail.com">Email</a>
         <a href="https://github.com/NikoDrina">GitHub</a>
+        <a href="https://gist.github.com/NikoDrina/c8e6715a2b4ef701b5458fa8d3f72861">Revolt of 1804 privacy</a>
         <a href="https://gist.github.com/NikoDrina/d56529ce1ca69260328f16be05bbcb22">Clock Out privacy</a>
         <a href="https://gist.github.com/NikoDrina/1137550841e1736f012a484f3e18f34c">Break Glass privacy</a>
         <a href="https://gist.github.com/NikoDrina/e68199185fd0bf6ee3df0ecbefcd1f06">Zorya privacy</a>
