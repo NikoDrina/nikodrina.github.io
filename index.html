@@ -287,6 +287,7 @@ a.btn:hover .arrow { transform: translateX(4px); }
 .app--revolt { background-color: #E9DDC7; color: #2A2018;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cpath d='M28 0 L56 16.2 L56 48.5 L28 64.7 L0 48.5 L0 16.2 Z M28 64.7 L28 97' fill='none' stroke='%232A2018' stroke-opacity='0.07' stroke-width='1.5'/%3E%3C/svg%3E"); }
 .app--revolt .tag--solid { background: #2D4C9A; color: #F3EBDC; border-color: #2D4C9A; }
+.app--revolt .tag--new { background: #B23A24; color: #F3EBDC; border-color: #B23A24; }
 .app--revolt .app__sub { color: #B23A24; opacity: 1; }
 .deck { position: relative; height: clamp(360px, 38vw, 520px); }
 .deck img { position: absolute; left: 50%; top: 50%; width: clamp(280px, 34vw, 500px); height: auto; border-radius: 18px; border: 5px solid #2A2018; background: #2A2018;
@@ -330,7 +331,7 @@ a.btn:hover .arrow { transform: translateX(4px); }
     <div>
       <p class="hero__hi">Hi, I'm Nikola.</p>
       <h1>Apps I'd <span class="outline">actually</span> want on <span class="hl">my own</span> phone.</h1>
-      <p class="hero__lede">A tiny software studio of one in Ohlsdorf, Austria. Coming soon: a strategy game of the 1804 Serbian uprising. So far: a factory you run in minutes a day, a roguelite you can pick up in seconds, and a link manager that finally makes sense of your bookmarks.</p>
+      <p class="hero__lede">A tiny software studio of one in Ohlsdorf, Austria. New: a strategy game of the 1804 Serbian uprising. Also: a factory you run in minutes a day, a roguelite you can pick up in seconds, and a link manager that finally makes sense of your bookmarks.</p>
       <div class="hero__cta">
         <a class="btn btn--ink" href="#apps">See the apps <span class="arrow" aria-hidden="true">↓</span></a>
         <a class="btn" href="#support">Get help</a>
@@ -366,15 +367,16 @@ a.btn:hover .arrow { transform: translateX(4px); }
   <section class="app app--revolt app--flip" id="revolt-1804" aria-labelledby="revolt-1804-title">
     <div class="wrap app__grid">
       <div class="app__text reveal">
-        <div class="app__top"><span class="app__num">01 / 04</span><span class="tag tag--solid">iPhone &amp; iPad</span><span class="tag">Game</span></div>
+        <div class="app__top"><span class="app__num">01 / 04</span><span class="tag tag--new">New</span><span class="tag">Game</span></div>
         <div class="app__title">
           <img class="app__icon" src="assets/img/icon-revolt.png" alt="" width="256" height="256">
           <div><h3 id="revolt-1804-title">Revolt of 1804</h3><p class="app__sub">Battle under the plum tree</p></div>
         </div>
         <p class="app__kicker">Šumadija rises. Will the villages follow?</p>
         <p class="app__desc">Lead the First Serbian Uprising on a painted map that turns with the seasons. Win the villages over, arm your bands, and outfight the pasha's columns on hex battlefields where every attack shows its odds before you commit. Three campaigns, from the assembly at Orašac to the walls of Belgrade.</p>
-        <ul class="chips"><li>Hex battles</li><li>3 campaigns</li><li>Plays offline</li><li>No ads</li></ul>
-        <div class="app__cta"><span class="btn btn--ink soon">Coming soon to the App Store</span></div>
+        <ul class="chips"><li>Hex battles</li><li>3 campaigns</li><li>iPhone &amp; iPad</li><li>Plays offline</li><li>No ads</li></ul>
+        <p class="app__price">The first campaign free · all three for €3.99</p>
+        <div class="app__cta"><a class="btn btn--ink" href="https://apps.apple.com/at/app/revolt-of-1804/id6838113383">Download on the App Store <span class="arrow" aria-hidden="true">→</span></a></div>
       </div>
       <div class="deck reveal reveal-delay">
         <img src="assets/img/revolt-3.jpg" alt="Revolt of 1804: the Orašac campaign's opening card, Šumadija rises" width="1200" height="552" loading="lazy">
@@ -508,6 +510,10 @@ a.btn:hover .arrow { transform: translateX(4px); }
         <details>
           <summary>Where is my data stored?</summary>
           <p>Revolt of 1804 keeps your campaigns on your iPhone or iPad and doesn't connect to the internet at all. Clock Out keeps your factory on your iPhone and sends nothing anywhere. Zorya syncs privately through your own iCloud, with no account and no password, and has full JSON export and import built in.</p>
+        </details>
+        <details>
+          <summary>What does Revolt of 1804 cost?</summary>
+          <p>The Orašac district campaign and the practice field are free. One purchase (€3.99) opens the two long campaigns, the Belgrade pashaluk and Karađorđe's Serbia, for good, with no ads and no subscription. To restore it on a new iPhone or iPad, open Settings → The whole uprising → Restore.</p>
         </details>
         <details>
           <summary>What does Clock Out cost?</summary>
